@@ -116,3 +116,15 @@ h3, .section a {
 #interfaces-page {
     background-color: var(--interfaces-color);
 }
+
+#games-page {
+    background-color: var(--interfaces-color);
+}
+
+#museums-page {
+    background-color: var(--interfaces-color);
+}
+
+#info-page {
+    background-color: var(--interfaces-color);
+}
