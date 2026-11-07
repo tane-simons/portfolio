@@ -223,6 +223,6 @@ h3 a:hover {
     }
 
     #departure img, #about img {
-    width: calc(100% - 2rem);
-}
+        width: calc(100% - 2rem);
+    }
 }
