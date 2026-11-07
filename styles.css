@@ -5,23 +5,28 @@
     --games-color: #B6A593;
     --museums-color: #B5BDAC;
     --info-color: #6B5B4D;
+    --primary: #FCF8F0;
+    --secondary: #392E26;
 }
 
 html {
-    background-color: #FCF8F0;
     width: 100%;
     font-family: 'BR Segma';
+    background-color: var(--primary);
 }
 
 header {
     font-size: 1.5rem;
-    color: #392E26;
+    color: var(--secondary);
     font-weight: 300;
     letter-spacing: 3vw;
     word-spacing: 1rem;
-    margin: 2rem 0;
+    margin: 2rem 0 2rem 0rem;
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 main {
@@ -35,7 +40,7 @@ main {
     grid-template-columns: repeat(auto-fit, 17rem);
     justify-content: center;
     gap: 4vw;
-    width: 100%;
+    width: 90%;
     margin: 8vw 0;
 }
 
@@ -46,15 +51,15 @@ main {
     background-color: white;
     display: flex;
     flex-direction: column;
-    border: 0.05rem solid black;
+    border: 0.05rem solid var(--secondary);
     overflow: hidden;
 }
 
-.section:hover {
+.color-thumbnail:hover, h2:hover {
     cursor: pointer;
 }
 
-.section:hover .color-thumbnail {
+.color-thumbnail:hover, .section:has(h2:hover) .color-thumbnail {
     transform: scale(1.02);
 }
 
@@ -88,9 +93,10 @@ h2 {
     font-size: 1rem;
     margin: 1.5rem 0;
     z-index: 2;
+    color: var(--secondary);
 }
 
-h3, .section a {
+h3 {
     font-weight: 300;
     font-size: 1rem;
     line-height: 140%;
@@ -99,32 +105,124 @@ h3, .section a {
     z-index: 2;
 }
 
-.section a {
+h3 a {
     border-bottom: 0.05rem solid transparent;
 }
 
-.section a:hover {
-    border-bottom: 0.05rem solid black;
+h3 a:hover {
+    border-bottom: 0.05rem solid var(--secondary);
     transition: border-bottom 0.3s ease;
 }
 
-.section-page header{
-    text-align: left;
-    margin: 2rem 0 2rem 5vw;
+.header-text {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
 }
 
-#interfaces-page {
-    background-color: var(--interfaces-color);
+.header-text a {
+    transition: font-weight 0.4s ease;
 }
 
-#games-page {
-    background-color: var(--interfaces-color);
+.header-text a:hover {
+    font-weight: 600;
 }
 
-#museums-page {
-    background-color: var(--interfaces-color);
+.header-text p {
+    letter-spacing: 1vw;
 }
 
-#info-page {
-    background-color: var(--interfaces-color);
+.section-page main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 8rem 0;
+    gap: 5rem;
+    max-width: 3500px;
+}
+
+
+.project {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    padding: 0 0 5rem 0;
+    border-bottom: 0.5px solid rgba(0,0,0,0.7);
+    justify-content: space-between;
+}
+
+.project img {
+    width: auto;
+    max-width: 60%;
+    height:auto;
+    max-height: 30rem;
+    align-self: flex-start;
+}
+
+.project-info {
+    padding: 0rem 1rem;
+    width: 40%;
+}
+
+.project-info h2 {
+    width:fit-content;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+    letter-spacing: 5%;
+}
+
+.project-info a:hover h2 {
+    border-bottom: 1px solid black;
+}
+
+#departure img, #about img {
+    padding: 1rem;
+    border: 0.5px solid var(--secondary);
+}
+
+.project-info p {
+    line-height: 2rem;
+    margin: 0 0 1rem 0;
+}
+
+.contact-element {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 18rem;
+    margin: 0 0 1rem 0;
+    align-items: center;
+}
+
+.contact-element p {
+    margin: 0;
+}
+
+.contact-element a {
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.contact-element a:hover {
+    border-bottom: 1px solid var(--secondary);
+}
+
+@media (max-width: 768px) {
+
+    .project {
+        flex-direction: column-reverse;
+        align-content: center;
+    }
+
+    .project img, .project-info {
+        width: 100%;
+        max-width: 100%;
+        text-align: justify;
+        padding:0 ;
+    }
+
+    #departure img, #about img {
+    width: calc(100% - 2rem);
+}
 }
